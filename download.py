@@ -26,7 +26,6 @@ def start_download(download_list_path):
 def get_file():
     f = open('./json/json.txt').read()
     data_lists = json.loads(f)
-    # print(data_lists)
 
     if os.path.isfile('./json/download-list.txt'):
         os.remove('./json/download-list.txt')

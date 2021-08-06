@@ -12,9 +12,6 @@ file = 'config/config.ini'
 conf = configparser.ConfigParser()
 conf.read(file, encoding='utf-8')
 
-# sections = conf.sections()
-# print(sections)
-
 user_ = dict(conf.items('user'))
 proxy_ = dict(conf.items('proxy'))
 path_ = dict(conf.items('path'))
