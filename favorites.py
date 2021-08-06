@@ -43,12 +43,12 @@ tasks = [
     for i, url in enumerate(videoUList)]
 loop.run_until_complete(asyncio.wait(tasks))
 
-print('页面数量: {}'.format(len(videoUList)))
+print('Number of pages: {}'.format(len(videoUList)))
 
 lists = get_video_url.lists
 json_data = json.dumps(lists)
 
-print('列表数量: {}'.format(len(lists)))
+print('Number of lists: {}'.format(len(lists)))
 
 if not os.path.exists('./json'):
     os.mkdir('./json')
