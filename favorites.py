@@ -36,11 +36,7 @@ html = Get_Page('https://cn.pornhub.com/users/%s/videos/favorites' % user)
 soup = BeautifulSoup(html, 'lxml')
 videoUList = soup.find('div', class_='videoUList').find_all('li')
 
-# print(videoUList)
-
-# 创建 协程 容器
 loop = asyncio.get_event_loop()
-# 指定任务给协程
 tasks = [
     asyncio.ensure_future(
         get_video_url.Get_Page(('https://cn.pornhub.com' + url.find('span', class_='title').a['href']), i + 1))
@@ -53,8 +49,6 @@ lists = get_video_url.lists
 json_data = json.dumps(lists)
 
 print('列表数量: {}'.format(len(lists)))
-# print(json_data)
-# print(type(json_data))
 
 if not os.path.exists('./json'):
     os.mkdir('./json')
